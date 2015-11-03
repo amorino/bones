@@ -1,0 +1,10 @@
+
+// examples
+.wrapper{
+  @include auto;
+  @include center($tranX: 0, $tranY: -40%);
+  @include mask($background: red);
+}
+h1{
+  text-align: center;
+}

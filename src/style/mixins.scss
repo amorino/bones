@@ -1,0 +1,27 @@
+
+@mixin transform($tranX: 0, $tranY: 0){
+  -webkit-transform: translate($tranX, $tranY);
+  transform: translate($tranX, $tranY);
+}
+
+@mixin center($left: 50%, $top: 50%, $tranX: -50%, $tranY: -50%){
+  position: absolute;
+  left: $left;
+  top: $top;
+  @include transform($tranX, $tranY);
+}
+
+@mixin mask($left: 0, $top: 0, $width: 100%, $height: 100%, $zindex: 100, $background: #000){
+  position: fixed;
+  width: $width;
+  height: $height;
+  left: $left;
+  top: $top;
+  z-index: $zindex;
+  background: $background;
+}
+
+@mixin auto{
+  margin-left: auto;
+  margin-right: auto;
+}
