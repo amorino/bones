@@ -49,7 +49,6 @@ class App extends Marionette.Application
     resize = =>
       @width = window.innerWidth
       @height = window.innerHeight
-
       null
 
     objectComplete = =>
@@ -64,7 +63,7 @@ class App extends Marionette.Application
         @renderStats()
 
     #   @auth = new AuthManager()
-      @share = new Share
+    #   @share = new Share
       @sections = new MainRouter
       @breakPoints = new Breakpoint
 

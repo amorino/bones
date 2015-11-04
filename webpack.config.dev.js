@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'eval',
@@ -16,12 +17,13 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('styles.css')
   ],
   resolve: {
     extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.hbs']
   },
   node: {
-    fs: "empty"
+    fs: 'empty'
   },
   module: {
     loaders: [{
@@ -30,13 +32,13 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
-      loader: "style!css?importLoaders=1"
+      loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1')
     }, {
       test: /\.scss$/,
-      loader: "style!css!autoprefixer!sass"
+      loader: 'style!css?importLoaders=2&sourceMap!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap'
     }, {
       test: /\.hbs$/,
-      loader: "handlebars-loader"
+      loader: 'handlebars-loader'
     }]
   }
 };
