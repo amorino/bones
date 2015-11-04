@@ -86,10 +86,8 @@ class App extends Marionette.Application
 
     animate = =>
       requestAnimationFrame(@animate)
-      if(@debug)
+      if @debug and bowser.name is 'Chrome'
         @stats.update()
-
-      null
 
     renderStats = =>
       @stats.domElement.style.position = 'fixed'
