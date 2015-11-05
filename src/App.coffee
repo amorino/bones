@@ -19,7 +19,7 @@ class App extends Marionette.Application
   height: window.innerHeight
   objReady: 0
 
-    initialize = (options)->
+    initialize = (options)=>
       if @debug
         console.info '[App Options] ', options
       require './lib/helpers'
