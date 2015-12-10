@@ -13,8 +13,8 @@ class Share
 
     openWin : (url, w, h) ->
 
-        left = ( screen.availWidth  - w ) >> 1
-        top  = ( screen.availHeight - h ) >> 1
+        left = ( screen.availWidth - w ) >> 1
+        top = ( screen.availHeight - h ) >> 1
 
         window.open url, '', 'top='+top+',left='+left+',width='+w+',height='+h+',location=no,menubar=no'
 
@@ -30,7 +30,7 @@ class Share
 
     pinterest : (url, media, descr) =>
 
-        url   = encodeURIComponent(url or @url)
+        url = encodeURIComponent(url or @url)
         media = encodeURIComponent(media)
         descr = encodeURIComponent(descr)
 
@@ -40,7 +40,7 @@ class Share
 
     tumblr : (url, media, descr) =>
 
-        url   = encodeURIComponent(url or @url)
+        url = encodeURIComponent(url or @url)
         media = encodeURIComponent(media)
         descr = encodeURIComponent(descr)
 
@@ -49,7 +49,7 @@ class Share
         null
 
     facebook : ( url , copy = '') =>
-        url   = encodeURIComponent(url or @url)
+        url = encodeURIComponent(url or @url)
         decsr = encodeURIComponent(copy)
 
         @openWin "http://www.facebook.com/share.php?u=#{url}&t=#{decsr}", 600, 300
@@ -58,7 +58,7 @@ class Share
 
     twitter : ( url , copy = '') =>
 
-        url   = encodeURIComponent(url or @url)
+        url = encodeURIComponent(url or @url)
         if copy is ''
             copy = 'Twitter share'
 

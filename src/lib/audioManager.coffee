@@ -24,8 +24,8 @@ class AudioManager
     loadSound : (index, loadNext = true) =>
 
         sound = new Howl({
-            urls   : [ AudioManager.SOUNDS[index].src ]
-            loop   : AudioManager.SOUNDS[index].loop
+            urls : [ AudioManager.SOUNDS[index].src ]
+            loop : AudioManager.SOUNDS[index].loop
             volume : if AudioManager.SOUNDS[index].volume then AudioManager.SOUNDS[index].volume else 1
             onload : =>
                 # App.data.song[index] = sound

@@ -1,15 +1,15 @@
 class MainController
 
-  index:()=>
-    @setPageTitle("Home")
+    index:()=>
+        @setPageTitle("Home")
 
-  dashboard:()=>
-    @setPageTitle("Dashboard")
+    dashboard:()=>
+        @setPageTitle("Dashboard")
 
-  setPageTitle: (sub=null) ->
+    setPageTitle: (sub=null) ->
 
-    title = App.data.name + " - " + sub
-    if window.document.title isnt title then window.document.title = title
-    return null
-    
+        title = App.data.name + " - " + sub
+        if window.document.title isnt title then window.document.title = title
+        return null
+
 module.exports = MainController

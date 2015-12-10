@@ -14,7 +14,7 @@ view = (window or document)
 
 window.Behaviors = {}
 Marionette.Behaviors.behaviorsLookup = ()->
-  return window.Behaviors
+    return window.Behaviors
 
 view.App = new App (options)
 view.App.start()

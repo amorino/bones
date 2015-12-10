@@ -1,37 +1,37 @@
 Facebook = require "../lib/facebook"
 
 class AuthManager
-  constructor:()->
-    if App.debug
-      console.info "[Auth Manager Init]"
-
-  login:(service,callback=null)=>
-    $dataDfd = $.Deferred()
-    switch service
-      when 'facebook'
+    constructor:()->
         if App.debug
-          console.info "switch", service
-        Facebook.login $dataDfd
+            console.info "[Auth Manager Init]"
 
-    $dataDfd.done (res) => @authSuccess service, res
-    $dataDfd.fail (res) => @authFail service, res
-    $dataDfd.always () => @authCallback callback
+    login:(service,callback=null)=>
+        $dataDfd = $.Deferred()
+        switch service
+            when 'facebook'
+                if App.debug
+                    console.info "switch", service
+                Facebook.login $dataDfd
 
-    return
-    # $dataDfd
+        $dataDfd.done (res) => @authSuccess service, res
+        $dataDfd.fail (res) => @authFail service, res
+        $dataDfd.always () => @authCallback callback
 
-  authSuccess:(service,response)->
-    if App.debug
-      console.info "login success", response
-    return
+        return
+        # $dataDfd
 
-  authFail:(service, response) ->
-    if App.debug
-      console.info "login fail", response
-    return
+    authSuccess:(service,response)->
+        if App.debug
+            console.info "login success", response
+        return
 
-  authCallback:(callback=null)->
-    callback?()
-    return
+    authFail:(service, response) ->
+        if App.debug
+            console.info "login fail", response
+        return
+
+    authCallback:(callback=null)->
+        callback?()
+        return
 
 module.exports = AuthManager

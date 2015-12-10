@@ -3,25 +3,21 @@ Analytics wrapper
 ###
 class Analytics
 
-    tags    : null
+    tags : null
     started : false
 
-    attempts        : 0
+    attempts : 0
     allowedAttempts : 5
 
     constructor : (tags, @callback) ->
-
         $.getJSON tags, @onTagsReceived
-
         return null
 
 
     onTagsReceived : (data) =>
-
-        @tags    = data
+        @tags = data
         @started = true
         @callback?()
-
         null
 
     track : (param) =>

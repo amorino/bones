@@ -1,55 +1,55 @@
 Requester = require "./lib/requester"
 
 class Data
-  url:[]
-  id:[]
-  locale:'es-mx'
-  name:"Boilerplate"
-  userInfo:null
+    url:[]
+    id:[]
+    locale:'es-mx'
+    name:"Boilerplate"
+    userInfo:null
 
-  constructor:(@callback=null)->
-    @init()
-    # @getUserInfo()
+    constructor:(@callback=null)->
+        @init()
+        # @getUserInfo()
 
-  init:=>
-    if App.LIVE
-      @url.endPoint = ""
-      @id.FB = ""
-      @id.GA = ""
-    else
-      @url.endPoint = ""
-      @id.FB = ""
-      @id.GA = ""
+    init:=>
+        if App.LIVE
+            @url.endPoint = ""
+            @id.FB = ""
+            @id.GA = ""
+        else
+            @url.endPoint = ""
+            @id.FB = ""
+            @id.GA = ""
 
-    # @getUserInfo()
-    @callback?()
-    null
+        # @getUserInfo()
+        @callback?()
+        null
 
-  getUserInfo:=>
-    Requester.request
-      type: 'POST'
-      url: @url.endPoint + "/gallery"
-      dataType: "json"
-      data:
-        "email" : "foo@bar.com"
-        "raceNumber": "12345"
-      done: (e)=>
-        @isRequestUserInfo = true
-        @onRequestDone(e,"userInfo")
-      fail: (e)=>
-        @isRequestingSuggestion = false
-        @onRequestError(e)
+    getUserInfo:=>
+        Requester.request
+            type: 'POST'
+            url: @url.endPoint + "/gallery"
+            dataType: "json"
+            data:
+                "email" : "foo@bar.com"
+                "raceNumber": "12345"
+            done: (e)=>
+                @isRequestUserInfo = true
+                @onRequestDone(e,"userInfo")
+            fail: (e)=>
+                @isRequestingSuggestion = false
+                @onRequestError(e)
 
-    null
+        null
 
 
-  onRequestDone:(e, type=null) =>
-    if type is "userInfo"
-      @userInfo = e
+    onRequestDone:(e, type=null) =>
+        if type is "userInfo"
+            @userInfo = e
 
-    null
+        null
 
-  onRequestError:()->
-    console.log "something is wrong"
+    onRequestError:()->
+        console.log "something is wrong"
 
 module.exports = Data
