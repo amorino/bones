@@ -1,5 +1,5 @@
 Marionette = require 'backbone.marionette'
-Controller = require '../controllers/main'
+Controller = require 'controllers/main'
 
 class MainRouter extends Marionette.AppRouter
     controller: new Controller

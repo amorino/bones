@@ -1,7 +1,7 @@
-AbstractItemView = require '../base/AbstractItemView'
+AbstractItemView = require 'base/AbstractItemView'
 
 class ContentView extends AbstractItemView
     className: 'Content'
-    template : require './templates/Content'
+    template : require 'views/templates/Content'
 
 module.exports = ContentView

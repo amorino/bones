@@ -1,4 +1,4 @@
-Data = require "../Data"
+Data = require "Data"
 
 class Facebook
 

@@ -1,4 +1,4 @@
-Requester = require "./lib/requester"
+Requester = require "lib/requester"
 
 class Data
     url:[]

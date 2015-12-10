@@ -1,8 +1,8 @@
-AbstractItemView = require '../base/AbstractItemView'
+AbstractItemView = require 'base/AbstractItemView'
 
 class HeaderView extends AbstractItemView
     className: 'Header'
-    template : require './templates/Header'
+    template : require 'views/templates/Header'
 
 
 module.exports = HeaderView

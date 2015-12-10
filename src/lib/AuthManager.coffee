@@ -1,4 +1,4 @@
-Facebook = require "../lib/facebook"
+Facebook = require "lib/facebook"
 
 class AuthManager
     constructor:()->

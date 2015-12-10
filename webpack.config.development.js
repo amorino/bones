@@ -20,7 +20,8 @@ module.exports = {
         new ExtractTextPlugin('styles.css')
     ],
     resolve: {
-        extensions: ['', '.coffee', '.js', '.json',  '.css', '.scss', '.hbs'],
+        root: path.resolve('./src'),
+        extensions: ['', '.coffee', '.js', '.json', '.css', '.scss', '.hbs'],
         moduleDirectories: ['src', 'node_modules', 'vendor', 'bower_directories']
     },
     node: {

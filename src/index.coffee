@@ -1,7 +1,7 @@
-App = require './App'
+App = require 'App'
 Marionette = require 'backbone.marionette'
 FastClick = require 'fastclick'
-require './application.scss'
+require 'application.scss'
 require "normalize.css"
 
 options = {}

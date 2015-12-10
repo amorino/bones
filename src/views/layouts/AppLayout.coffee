@@ -1,8 +1,8 @@
 Marionette = require('backbone.marionette')
-Template = require './templates/AppLayout'
-HeaderView = require '../HeaderView'
-FooterView = require '../FooterView'
-ContentView = require '../ContentView'
+Template = require 'views/layouts/templates/AppLayout'
+HeaderView = require 'views/HeaderView'
+FooterView = require 'views/FooterView'
+ContentView = require 'views/ContentView'
 
 class AppLayout extends Marionette.LayoutView
     el: 'main'
